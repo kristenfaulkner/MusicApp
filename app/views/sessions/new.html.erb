@@ -1,0 +1,20 @@
+<br>
+<h1>Sign In! Music Awaits</h1>
+<body style="background-image: url(<%= asset_path 'beatles.jpg' %>)">
+<form method="post" action="<%=session_url%>">
+  <input type="hidden" name="authenticity_token" value=<%= form_authenticity_token %>>
+  Email:
+      <input type="text" name="user[email]" 
+      placeholder="Email" value = <%= @user.email %>>
+      <br>
+  Password: 
+      <input type="password" name="user[password]" 
+      placeholder="password" value = <%= @user.password %>>
+      <br>
+      <br>
+  <input type="submit" value="Login!">
+</form>
+<br>
+
+<%=link_to "Create Account", new_user_url%>
+</body>

@@ -1,0 +1,12 @@
+<h1>Check out all the best Bands!</h1>
+
+
+  <ul style="list-style: none; ">
+    <%= Band.all.each do |band|%>
+    <li>
+      Name: <%=band.name%>
+    </li>
+    <%end%>
+  </ul>
+
+  

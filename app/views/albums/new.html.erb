@@ -1,0 +1,30 @@
+<h1>Upload a new Album!</h1>
+<form method="post" action="/albums/">
+  <% if @album.persisted? %>
+    <input name="_method" type="hidden" value="patch">
+  <% end %>
+  
+  <input type="hidden" name="authenticity_token" value=<%= form_authenticity_token %>>
+
+  Album Title:
+      <input type="text" name="album[name]" 
+      placeholder="name" value = <%= @album.name %>>
+      <br>
+  Band: 
+      <select name="album[band_id]" value = <%= @band.id %>>
+        <%= Band.all.each do |band| %>>
+        <option value=<%= @band.id %>><%= @band.name %></option>
+      </select><br>
+      <br>
+  Year: 
+      <input type="year" name="album[year]]" value=<%= @album.year%>>
+      <br>
+  Picture (url):
+      <input type="text" name="album[image]]"
+      placeholder="default image" value=<%= album.image %> size="50">
+      <br>  
+      <br>
+      <input type="submit" value="Save Album">
+</form>
+<br>
+<%=link_to "<< back to Albums", albums_url%>

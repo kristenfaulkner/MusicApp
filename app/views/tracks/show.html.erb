@@ -1,0 +1,11 @@
+
+<h1>Welcome to the track page!</h1>
+
+  <ul style="list-style: none; ">
+    <%@track.notes.each do |note|%>
+    <li>
+     <%=note%>
+    </li>
+    <%end%>
+  </ul>
+<%= link_to "<<Back to Tracks Page", tracks_url%>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html align = "center">
+<head>
+  <title>MusicApp</title>
+  <%= csrf_meta_tags %>
+  <style>
+    .myclass {
+            height: 20px;
+            position: relative;
+            border: 2px solid #cdcdcd;
+            border-color: rgba(0,0,0,.14);
+            background-color: White;   ;
+            font-size: 14px;
+          
+            -moz-border-radius: 10px;
+            border-radius: 10px;
+            border:solid 1px lightgray;
+            padding:5px;
+        }
+        /*AliceBlue*/
+    .advancedSearchTextbox {
+        width: 526px;
+        margin-right: -4px;
+    }
+  
+    * {
+     font-size: 100%;
+     font-family: monaco;
+    }
+  
+    ul
+    {
+        list-style: none;
+    }
+  
+    tr.spaceUnder > td
+    {
+      padding-top: 2em;
+      padding-bottom: 2em;
+    }
+  
+    tr.horLines {
+        border-bottom: 1px solid black;
+        border-top: 1px solid black;
+        border-collapse: collapse;
+    }​
+  
+    </style>
+</head>
+<body>
+
+<%= yield %>
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+<br>
+<h1> Create a new account! </h1>
+<br>
+<body style="background-image: url(<%= asset_path 'beatles.jpg' %>)">
+<form method="post" action="/users">
+  <input type="hidden" name="authenticity_token" value=<%= form_authenticity_token %>>
+  <% if @user.persisted? %>
+    <input name="_method" type="hidden" value="patch">
+  <% end %>
+  
+  <!-- <input type="hidden" name="auth_key" value=<%= 3 %>> -->
+  Email:
+      <input type="text" name="user[email]" 
+      placeholder="email" value = <%= @user.email %>>
+      <br>
+  Password: 
+      <input type="password" name="user[password]" 
+      placeholder="password">
+      <br>
+  <input type="submit" value="Create User">
+</form>
+<br>
+Already Have an account?
+<br>
+<%=link_to "Click here to sign in", new_session_url%>

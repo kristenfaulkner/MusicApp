@@ -1,0 +1,26 @@
+<h1>Welcome to the Bands!</h1>
+
+<table>
+  <tr><strong>
+    <th>Band</th>
+    <th>Image</th>
+    <th>Albums</th>
+    <th>Tracks</th>
+  </strong></tr>
+  <%Band.all.each do |band| %>
+  <tr>
+    <td><%=band.name%></td>
+    <td><img src= "<%= band.image %>" width= "10%" height= "10%"></td>
+    <td><%band.albums.each do |album| %><%=album.name%><br><%end%></td>
+    <td>
+      <%band.albums.each do |album|%>
+        <%album.tracks.each do |track|%>
+          <%=track.name%><br>
+        <%end%>
+      <%end%>
+    </td>
+  </tr>
+  <%end%>
+</table>
+
+

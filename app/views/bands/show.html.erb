@@ -1,0 +1,25 @@
+<br>
+<h2>Welcome to the band <%=@band.name %></h2>
+
+  <ul style="list-style: none; ">
+    <%@band.albums.each do |album|%>   
+    <li>
+      Image: <img src= "<%= album.image%>" width="20%" height="20%">
+    </li>
+    <li>
+      Name: <%=album.name%>
+    </li>
+    <li>
+      Year: <%= album.year %>
+    </li>
+    <li>
+      Type: <%= album.live_or_studio %>
+    </li>
+    <li>
+      <%= link_to "Link to #{album.name}", album_url(@album)%>
+    </li>
+    <br>
+    <%end%>
+  </ul>
+<%= link_to "Add a new album", new_album_url%>
+<%= link_to "Back to all Bands", bands_url%>

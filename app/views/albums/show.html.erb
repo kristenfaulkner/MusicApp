@@ -1,0 +1,22 @@
+<%= @band = Band.find(@album.band_id)%>
+<%= @tracks = tracks.find_by_album_id(@album_id)%>
+
+<h1>Welcome to <%=@album.name%>!</h1>
+
+<h2><%=@album.name %>'s Tracks%></h2>
+  <ul style="list-style: none; ">
+    <%@tracks.each do |track|%>   
+    <li>
+      Name: <%=track.name%>
+    </li>
+    <li>
+      Year: <%= track.year %>
+    </li>
+    <li>
+      Type: <%= track.bonus_or_regular %>
+    </li>
+    <br>
+    <%end%>
+  </ul>
+<%= link_to "<<Back to all Albums", albums_url%>
+  
